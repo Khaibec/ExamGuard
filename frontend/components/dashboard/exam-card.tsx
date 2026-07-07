@@ -60,7 +60,7 @@ const ExamCard: React.FC<ExamCardProps> = ({ exam, loadingBarRef }) => {
               {exam?.name}
             </Typography>
 
-            <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+            <Stack direction="row" spacing={1} flexWrap="wrap">
               <Chip
                 size="small"
                 label={exam.status}
