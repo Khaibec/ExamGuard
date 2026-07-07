@@ -53,7 +53,7 @@ mongoose
           endDate: "2026-08-17",
           duration: 45,
           shuffleQuestions: true,
-          maxAttempts: 1,
+          maxAttempts: 100,
           questions: [
             {
               title: "Which is the correct spelling?",
@@ -93,7 +93,7 @@ mongoose
           endDate: "2026-07-20",
           duration: 90,
           shuffleQuestions: false,
-          maxAttempts: 3,
+          maxAttempts: 6,
           questions: [
             {
               title: "What is the chemical formula for water?",
@@ -120,10 +120,10 @@ mongoose
 
       const students = [
         {
-          _id: "1234567890",
+          _id: "student001",
           fname: "Khải",
           lname: "Phùng",
-          password: "password123",
+          password: "studend123",
           assignedExams: [
             { examId: "exam001", status: "pending" },
             { examId: "exam002", status: "pending" },
@@ -131,10 +131,10 @@ mongoose
           submittedExams: {},
         },
         {
-          _id: "1234567891",
+          _id: "student002",
           fname: "Ngọc",
           lname: "Trần",
-          password: "password123",
+          password: "studend123",
           assignedExams: [
             { examId: "exam002", status: "completed" },
             { examId: "exam003", status: "pending" },
@@ -183,10 +183,10 @@ mongoose
           },
         },
         {
-          _id: "0123456789",
+          _id: "student003",
           fname: "Minh",
           lname: "Lê",
-          password: "password123",
+          password: "studend123",
           assignedExams: [
             { examId: "exam001", status: "graded" },
             { examId: "exam003", status: "pending" },

@@ -23,8 +23,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ loadingBarRef }) => {
   const router = useRouter();
 
   const [formData, setData] = useState({
-    id: "1234567890",
-    password: "password123",
+    id: "",
+    password: "",
   });
 
   const [errors, setErrors] = useState({
