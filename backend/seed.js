@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Student = require("./models/student");
 const Exam = require("./models/exam");
 const Admin = require("./models/admin");
-
+const CheatingLog = require("./models/cheating_log");
 const DB_URL = process.env.DB_URL;
 
 mongoose
@@ -18,6 +18,7 @@ mongoose
       await Student.deleteMany({});
       await Exam.deleteMany({});
       await Admin.deleteMany({});
+      await CheatingLog.deleteMany({});
       console.log("✅ Cleared existing data");
 
       const exams = [
@@ -123,7 +124,7 @@ mongoose
           _id: "student001",
           fname: "Khải",
           lname: "Phùng",
-          password: "studend123",
+          password: "student123",
           assignedExams: [
             { examId: "exam001", status: "pending" },
             { examId: "exam002", status: "pending" },
@@ -134,7 +135,7 @@ mongoose
           _id: "student002",
           fname: "Ngọc",
           lname: "Trần",
-          password: "studend123",
+          password: "student123",
           assignedExams: [
             { examId: "exam002", status: "completed" },
             { examId: "exam003", status: "pending" },
@@ -186,7 +187,7 @@ mongoose
           _id: "student003",
           fname: "Minh",
           lname: "Lê",
-          password: "studend123",
+          password: "student123",
           assignedExams: [
             { examId: "exam001", status: "graded" },
             { examId: "exam003", status: "pending" },
@@ -242,14 +243,14 @@ mongoose
           fname: "Lan",
           lname: "Nguyễn",
           password: "admin12345",
-          managedStudents: ["1234567890", "1234567891"],
+          managedStudents: ["student001", "student002"],
         },
         {
           _id: "admin002",
           fname: "Hùng",
           lname: "Trần",
           password: "admin12345",
-          managedStudents: ["0123456789"],
+          managedStudents: ["student001", "student003"],
         },
       ];
 
@@ -277,7 +278,6 @@ mongoose
           `   - ID: ${a._id}, Password: ${a.password}, Students: ${a.managedStudents.join(", ")}`
         );
       });
-
       process.exit(0);
     } catch (err) {
       console.log("❌ Error:", err.message);
