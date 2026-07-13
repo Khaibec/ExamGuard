@@ -372,6 +372,7 @@ exports.getExamReview = (req, res) => {
           id: log._id,
           imageUrl: log.imageUrl,
           createdAt: log.createdAt,
+          attemptNumber: log.attemptNumber ?? null,
         });
       });
 
